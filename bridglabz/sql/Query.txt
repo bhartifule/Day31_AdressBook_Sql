@@ -122,3 +122,21 @@ mysql> select * from addressbook;
 +-----------+----------+-------------+--------+--------+------------+----------------------+
 4 rows in set (0.00 sec)
 
+
+UC-5
+Ability to delete a person using person's name
+
+mysql> delete from addressbook where FirstName = 'Supriya';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
