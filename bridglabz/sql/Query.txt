@@ -98,3 +98,27 @@ mysql> select * from AddressBook;
 +-----------+----------+-------------+--------+--------+------------+----------------------+
 4 rows in set (0.00 sec)
 
+UC-4
+Ability to edit existing contact
+person using their name
+
+
+mysql>  update addressbook set PhoneNo = '8669136896' where FirstName = 'Supriya';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql>  update addressbook set Zip = '441212' where FirstName = 'shivani';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
