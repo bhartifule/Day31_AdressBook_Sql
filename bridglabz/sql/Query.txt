@@ -1,0 +1,65 @@
+UC-1
+Ability to create a Address Book Service
+===============================
+
+mysql> create database AddressBook_Service;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| information_schema  |
+| learn               |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| person              |
+| sakila              |
+| student             |
+| sys                 |
+| user                |
+| world               |
++---------------------+
+12 rows in set (0.02 sec)
+
+
+UC-2
+Ability to create a Address Book Table with first and
+last names, address, city, state, zip, phone number
+and email as its attributes
+
+
+
+mysql> create table AddressBook(
+    -> FirstName Varchar(20) not null,
+    -> LastName Varchar(20) not null,
+    ->  Address Varchar(20) not null,
+    ->  City Varchar(20) not null,
+    -> Zip Varchar(20) not null,
+    -> PhoneNo Varchar(20) not null,
+    -> Email Varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
++-------------------------------+
+| Tables_in_addressbook_service |
++-------------------------------+
+| addressbook                   |
++-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc addressbook;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| FirstName | varchar(20) | NO   |     | NULL    |       |
+| LastName  | varchar(20) | NO   |     | NULL    |       |
+| Address   | varchar(20) | NO   |     | NULL    |       |
+| City      | varchar(20) | NO   |     | NULL    |       |
+| Zip       | varchar(20) | NO   |     | NULL    |       |
+| PhoneNo   | varchar(20) | NO   |     | NULL    |       |
+| Email     | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
