@@ -1,0 +1,214 @@
+UC-1
+Ability to create a Address Book Service
+===============================
+
+mysql> create database AddressBook_Service;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| information_schema  |
+| learn               |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| person              |
+| sakila              |
+| student             |
+| sys                 |
+| user                |
+| world               |
++---------------------+
+
+
+UC-2
+Ability to create a Address Book Table with first and
+last names, address, city, state, zip, phone number
+and email as its attributes
+
+
+
+mysql> create table AddressBook(
+    -> FirstName Varchar(20) not null,
+    -> LastName Varchar(20) not null,
+    ->  Address Varchar(20) not null,
+    ->  City Varchar(20) not null,
+    -> Zip Varchar(20) not null,
+    -> PhoneNo Varchar(20) not null,
+    -> Email Varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
++-------------------------------+
+| Tables_in_addressbook_service |
++-------------------------------+
+| addressbook                   |
++-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc addressbook;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| FirstName | varchar(20) | NO   |     | NULL    |       |
+| LastName  | varchar(20) | NO   |     | NULL    |       |
+| Address   | varchar(20) | NO   |     | NULL    |       |
+| City      | varchar(20) | NO   |     | NULL    |       |
+| Zip       | varchar(20) | NO   |     | NULL    |       |
+| PhoneNo   | varchar(20) | NO   |     | NULL    |       |
+| Email     | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+UC-3
+Ability to insert new Contacts to Address
+Book
+
+
+
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Bharti','Fule','Hingna','Nagpur','441110','9443561234','Bhartifu10@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Mansi','Meshram','Hingnghat','Pune','441208','7856413897','mansi04@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Aditya','Ghule','Tumsar','Nashik','441209','7856414564','Aditya04@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Pratiksha','Ramteke','PratabNagar','Mumbai','441009','7856414234','Pratiksha1@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from AddressBook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+UC-4
+Ability to edit existing contact
+person using their name
+
+
+mysql>  update addressbook set PhoneNo = '8669136896' where FirstName = 'Supriya';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql>  update addressbook set Zip = '441212' where FirstName = 'shivani';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+
+UC-5
+Ability to delete a person using person's name
+
+mysql> delete from addressbook where FirstName = 'Supriya';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+ 
+
+uc-7
+
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+mysql>  select * from addressbook
+    ->  where city= "Pune";
++-----------+----------+-----------+------+--------+------------+-------------------+
+| FirstName | LastName | Address   | City | Zip    | PhoneNo    | Email             |
++-----------+----------+-----------+------+--------+------------+-------------------+
+| Mansi     | Meshram  | Hingnghat | Pune | 441208 | 7856413897 | mansi04@gmail.com |
++-----------+----------+-----------+------+--------+------------+-------------------+
+1 row in set (0.00 sec)
+
+
+uc-8
+mysql> select * from addressbook
+    ->  where city= "Tumsar"
+    ->  order by FirstName;
+Empty set (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+
+
+uc-9
+mysql> alter table addressbook add type varchar(10) after FirstName;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc addressbook;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| FirstName | varchar(20) | NO   |     | NULL    |       |
+| type      | varchar(10) | YES  |     | NULL    |       |
+| LastName  | varchar(20) | NO   |     | NULL    |       |
+| Address   | varchar(20) | NO   |     | NULL    |       |
+| City      | varchar(20) | NO   |     | NULL    |       |
+| Zip       | varchar(20) | NO   |     | NULL    |       |
+| PhoneNo   | varchar(20) | NO   |     | NULL    |       |
+| Email     | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+uc-10
+
+mysql> select count(*) from addressbook where type="zip";
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.02 sec)
