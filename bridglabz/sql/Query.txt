@@ -140,3 +140,47 @@ mysql> select * from addressbook;
 +-----------+----------+-------------+--------+--------+------------+----------------------+
 4 rows in set (0.00 sec)
 
+
+uc-7
+
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+mysql>  select * from addressbook
+    ->  where city= "Pune";
++-----------+----------+-----------+------+--------+------------+-------------------+
+| FirstName | LastName | Address   | City | Zip    | PhoneNo    | Email             |
++-----------+----------+-----------+------+--------+------------+-------------------+
+| Mansi     | Meshram  | Hingnghat | Pune | 441208 | 7856413897 | mansi04@gmail.com |
++-----------+----------+-----------+------+--------+------------+-------------------+
+1 row in set (0.00 sec)
+
+
+uc-8
+mysql> select * from addressbook
+    ->  where city= "Tumsar"
+    ->  order by FirstName;
+Empty set (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| FirstName | LastName | Address     | City   | Zip    | PhoneNo    | Email                |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+| Bharti    | Fule     | Hingna      | Nagpur | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | Meshram  | Hingnghat   | Pune   | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | Ghule    | Tumsar      | Nashik | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | Ramteke  | PratabNagar | Mumbai | 441009 | 7856414234 | Pratiksha1@gmail.com |
++-----------+----------+-------------+--------+--------+------------+----------------------+
+4 rows in set (0.00 sec)
+
+=======
+
