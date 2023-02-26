@@ -213,3 +213,18 @@ mysql> select count(*) from addressbook where type="zip";
 |        0 |
 +----------+
 1 row in set (0.02 sec)
+mysql> INSERT INTO addressbook (FirstName, LastName, Address, City, Zip, PhoneNo, Email)values
+    -> ('Surabhi','Kohapare','Jatpara gate','Chandrapur','441207','8668158325','surabhi@gmail.com');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from addressbook;
++-----------+------+----------+--------------+------------+--------+------------+----------------------+
+| FirstName | type | LastName | Address      | City       | Zip    | PhoneNo    | Email                |
++-----------+------+----------+--------------+------------+--------+------------+----------------------+
+| Bharti    | NULL | Fule     | Hingna       | Nagpur     | 441110 | 9443561234 | Bhartifu10@gmail.com |
+| Mansi     | NULL | Meshram  | Hingnghat    | Pune       | 441208 | 7856413897 | mansi04@gmail.com    |
+| Aditya    | NULL | Ghule    | Tumsar       | Nashik     | 441209 | 7856414564 | Aditya04@gmail.com   |
+| Pratiksha | NULL | Ramteke  | PratabNagar  | Mumbai     | 441009 | 7856414234 | Pratiksha1@gmail.com |
+| Surabhi   | NULL | Kohapare | Jatpara gate | Chandrapur | 441207 | 8668158325 | surabhi@gmail.com    |
++-----------+------+----------+--------------+------------+--------+------------+----------------------+
+5 rows in set (0.02 sec)
