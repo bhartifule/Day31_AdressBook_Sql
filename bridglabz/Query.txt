@@ -1,9 +1,7 @@
-
 UC-1
 
 Ability to create a Address Book Service
 ===============================
-
 
 mysql> create database AddressBook_Service;
 Query OK, 1 row affected (0.03 sec)
@@ -230,3 +228,54 @@ mysql> select * from addressbook;
 | Surabhi   | NULL | Kohapare | Jatpara gate | Chandrapur | 441207 | 8668158325 | surabhi@gmail.com    |
 +-----------+------+----------+--------------+------------+--------+------------+----------------------+
 5 rows in set (0.02 sec)
+
+
+
+
+
+
+
+UC11:- Draw the ER Diagram for Address Book Service DB
+=====================================================================================================================================================================
+
+mysql> INSERT INTO addressbook (firstName, LastName, Address, city, zip, phoneNo, Email,Name,Type,state)values
+    -> ('Surabhi','Kohapare','Jatpara gate','Chandrapur','441207','8668158325','surabhi@gmail.com','Contactsim','Family','Maharashtra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+------------+--------------+------------+--------+------------+--------------------+-------------+------------+-------------+
+| FirstName | LastName   | Address      | City       | Zip    | PhoneNo    | Email              | Name        | Type       | state       |
++-----------+------------+--------------+------------+--------+------------+--------------------+-------------+------------+-------------+
+| Shivani   | Nandeshwar | Nandanwan    | Nagpur     | 441212 | 9443545678 | shvani08@gmail.com | ContactName | Family     | Maharashtra |
+| Mansi     | Mannurwar  | Hingewadi    | Pune       | 441208 | 7856413897 | mansi04@gmail.com  | ContactName | profession | Maharashtra |
+| Supriya   | Bhurle     | Nandanwan    | Nagpur     | 441212 | 9442181947 | supriya@gmail.com  | NULL        | Friends    | Maharashtra |
+| Surabhi   | Kohapare   | Jatpara gate | Chandrapur | 441207 | 8668158325 | surabhi@gmail.com  | Contactsim  | Family     | Maharashtra |
++-----------+------------+--------------+------------+--------+------------+--------------------+-------------+------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select Type from addressbook where FirstName = "Surabhi";
++--------+
+| Type   |
++--------+
+| Family |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select FirstName ,Type from addressbook ;
++-----------+------------+
+| FirstName | Type       |
++-----------+------------+
+| Shivani   | Family     |
+| Mansi     | profession |
+| Supriya   | Friends    |
+| Surabhi   | Family     |
++-----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select count(Type) from AddressBook where Type= "Family";
++-------------+
+| count(Type) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
