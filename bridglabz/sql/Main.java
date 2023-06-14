@@ -1,10 +1,9 @@
  UC-4-update-data-in-Table
 package com.bridglabz.sql;
+
 package com.bridglabz.sql;UC-3-Add-data-in-Table
 public class Main {
 public static void main(String[] args)
- UC-5-delete-data-in-Table
-{
 
 
 public class Main 
